@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="caricaarray()">Carica Array</button>
+    <button onclick="massimo()">Trova il Massimo</button>
+    <button onclick="minimo()"> Trova il Minimo</button>
+    <p id="out"></p>
+    <p id="uot"></p>
+    <p id="tou"></p>
+</body>
+
+<script>
+    let arraydatiCasuali=[];
+    let numerocasuale = -1;
+    let max=0;
+    let min=2000;
+    function caricaarray()
+    {
+            for (let i=0; i<1000; i++)
+            {
+                numerocasuale = parseInt(Math.random()*1000);
+                arraydatiCasuali.push(numerocasuale);
+                document.getElementById("out").innerHTML += arraydatiCasuali[i]+ " ";
+
+
+
+            }
+    }
+
+    function massimo()
+    {    
+        for(let a=0; a<1000; a++)
+        { 
+        if(arraydatiCasuali[a]>max)
+                {
+                   max=arraydatiCasuali[a];
+                    
+                }
+                document.getElementById("uot").innerHTML=max;
+        }
+        
+    }
+    function minimo()
+    {
+        for(let b=0; b<1000; b++)
+        { 
+        if(arraydatiCasuali[b]<min)
+                {
+                   min=arraydatiCasuali[b];
+                    
+                }
+                document.getElementById("tou").innerHTML=min;
+        }
+    }
+</script>
+</html>
