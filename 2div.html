@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Due Div Movimentati</title>
+
+<style>
+.CasellaDaSpostare
+    {
+    	left:0px;	 
+        top:0px;
+        position:absolute;
+    	border: 1px solid black;
+        height: 100px;
+        width: 100px;	
+    }
+    #divBlu
+    {
+        background-color: blue;	
+    }
+    
+    #divGiallo
+    {
+        background-color: yellow;	
+    }
+</style>
+
+
+<script type="text/javascript">
+mioIntervallo=setInterval(startCountDown, 3000);
+        let countdown=20;
+        let ContaPixel=0;
+//        let ContaPixel2=10;
+        let BaseDivBlu=0;
+        let LatoDestroDivBlu=0;
+        let TopDivGiallo=0;
+        let LeftDivGiallo=0;
+        //Caso si invertano
+        let BaseDivGiallo=0;
+        let LatoDestroDivGiallo=0;
+        let TopDivBlu=0;
+        let LeftDivBlu=0;
+		function startCountDown() {
+		    ContaPixel=parseInt(Math.random()*300);
+		  //  ContaPixel=ContaPixel+11;
+		    document.getElementById("divBlu").style.left=ContaPixel+ "px";
+		    LatoDestroDivBlu=ContaPixel+100;
+		    LatoDestroDivGiallo=ContaPixel+100; //caso invertiti
+		    ContaPixel=parseInt(Math.random()*300);
+            document.getElementById("divBlu").style.top=ContaPixel+ "px";
+            BaseDivBlu=ContaPixel+100;
+            BaseDivGiallo=ContaPixel+100; //caso invertiti
+            ContaPixel=parseInt(Math.random()*300);
+          //  ContaPixel2=ContaPixel2+1;
+            document.getElementById("divGiallo").style.left=ContaPixel+ "px";
+            LeftDivGiallo=ContaPixel;
+            LeftDivBlu=ContaPixel; //caso invertiti
+            ContaPixel=parseInt(Math.random()*300);
+            document.getElementById("divGiallo").style.top=ContaPixel+ "px";
+            TopDivGiallo=ContaPixel;
+            TopDivBlu=ContaPixel; //caso invertiti
+	       	countdown--;
+            if((BaseDivBlu>TopDivGiallo && LatoDestroDivBlu>LeftDivGiallo) || (BaseDivGiallo>TopDivBlu && LatoDestroDivGiallo>LeftDivBlu))
+            {
+                document.getElementById("divBlu").style.backgroundColor= "red";
+                document.getElementById("divGiallo").style.backgroundColor= "red";
+            }
+            else
+            {
+                document.getElementById("divBlu").style.backgroundColor= "blue";
+                document.getElementById("divGiallo").style.backgroundColor= "yellow";
+            }
+		}//fine startCountDown
+		
+</script>
+
+</head>
+
+<body>
+<div class="CasellaDaSpostare" id="divBlu">
+    </div>
+<div class="CasellaDaSpostare" id="divGiallo">
+    </div>
+</body>
+</html>
