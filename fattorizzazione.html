@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fattorizzatore</title>
+    <style>
+              *{ 
+           font-family: cursive;
+           background-color:rgb(171, 186, 248);
+           color: rgb(0, 0, 0);
+       }
+       h1 {
+  color: rgb(255, 0, 255);
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px rgb(3, 3, 255);
+}
+        .button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+        }
+        
+        .button1 {
+          background-color: white; 
+          color: black; 
+          border: 3px solid #003cff;
+          font-size: large;
+        }
+        
+        .button1:hover {
+          background-color: #003cff;
+          color: white;
+          
+        }
+        
+        .button2 {
+          background-color: white; 
+          color: black; 
+          border: 3px solid #ff01d5;
+          font-size: large;
+        }
+        
+        .button2:hover {
+          background-color: #ff01d5;
+          color: white;
+        }
+        
+        .button3 {
+          background-color: white; 
+          color: black; 
+          border: 3px solid #aca060;
+          font-size: large;
+        }
+        
+        .button3:hover {
+          background-color: #aca060;
+          color: white;
+        }
+        
+       
+        </style>
+</head>
+<h1>Fattorizzatore</h1>
+&#128151;
+<body>
+    
+       <input id="mioinput" type="text">
+       <button class="button1" onclick="dividinum();" id="mio bottone">cerca i fattori</button>
+       <button class="button2" onclick="trovare();" id="mio bottone">cerca i fattori1</button>
+       <button class="button3" onclick="trovato();" id="mio bottone">cerca i fattori2</button>
+
+    <script>
+function dividinum()
+    {
+        let in1=0;
+        in1=document.getElementById("mioinput").value;
+        document.write("il mio input è"+in1);
+        document.write("<br>");
+        document.write("<span>"+Fattorizzatore(in1)+"</span>"+"<br>");
+        document.write("<br>");
+    
+        function Fattorizzatore(n)
+        {
+            let fattore=1;
+            let fattoriOUT="";
+            for(fattore=1;fattore<=n/2;fattore++)
+            {
+                  if(n%fattore==0)
+                  {
+                     fattoriOUT=fattoriOUT+fattore+" ";
+                  }
+            }
+            return fattoriOUT;
+        }
+    }
+   function trovare(){
+     let fat=1;
+     let div=1;
+     let cont=0;
+     let cont1=0;
+     let contmax=0;
+     let a=0;
+    for (fat = 1; fat<1000; fat++)
+        {
+            for (div = 1; div<1000; div++)
+            {
+                if (fat%div==0)
+                {
+                    cont++;
+                    cont1++;
+                }
+ 
+            }  
+ 
+            if (cont >= contmax)
+                {
+                    contmax = cont;
+                    a = fat;
+                }
+                cont=0;
+        }
+ 
+       
+cont4=cont1-336;
+
+document.write("Il numero con più numeri primi ne ha " + contmax + " ed è " + a);
+document.write("<br>" + "la somma di tutti i fattori escluso il totale dei numeri primi è " + cont4);
+
+}
+function trovato(){
+    let fat=1;
+     let div=1;
+     let cont=0;
+     let cont1=0;
+     let contmax=0;
+     let a=0;
+    for (fat = 1; fat<2000; fat++)
+        {
+            for (div = 1; div<2000; div++)
+            {
+                if (fat%div==0)
+                {
+                    cont++;
+                    cont1++;
+                }
+ 
+            }  
+ 
+            if (cont >= contmax)
+                {
+                    contmax = cont;
+                    a = fat;
+                }
+                cont=0;
+        }
+ 
+       
+cont4=840*1680;
+
+document.write("Il numero con più numeri primi ne ha " + contmax + " ed è " + a);
+document.write("<br>" + "il prodotto tra il numero con più fattori tra 0 e 1000 e tra 1000 e 2000 e'__" + cont4);
+    
+
+}
+
+   </script>
+   </body>
+</html>
