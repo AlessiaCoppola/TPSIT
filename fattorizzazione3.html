@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<button><a href="https://alessiacoppola.github.io/TPSIT/page.html">github</a></button>
+<button><a href="http://alessiaa.altervista.org/wp-admin/edit.php">altervista</a></button>
 <style>
     *{
-background-color: black;
+background-color: rgb(255, 255, 255);
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    button {
+    formula{
  background-color: #eee;
  border: none;
  padding: 1rem;
@@ -42,10 +44,10 @@ button:disabled {
 </style>
 <body>
 
-    <button onclick="prodotto()" >prodotto 1</button>
-    <button onclick="numprimi()" >numeri primi 1</button>
-    <button onclick="numprimo()" >numeri primi 2</button>
-    <button onclick="prodo()" >prodotto 2</button>
+   <formula> <button onclick="prodotto()" >prodotto 1</button></formula>
+    <formula><button onclick="numprimi()" >numeri primi 1</button></formula>
+    <formula><button onclick="numprimo()" >numeri primi 2</button></formula>
+   <formula> <button onclick="prodo()" >prodotto 2</button></formula>
     <script>
         function prodotto(){
 
@@ -58,7 +60,7 @@ for(fattore=1;fattore<=n/2;fattore++)
         {
               if(n%fattore==0)
               {
-                 fattoriOUT=fattoriOUT+fattore+" "+"juvemerda";
+                 fattoriOUT=fattoriOUT+fattore+" "+"|";
               }
         }
 document.write(840+"ha"+fattoriOUT)
