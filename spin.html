@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>alessiacoppola</title>
+</head>
+<style>
+    *{
+        background-color: rgb(153, 226, 255);
+    }
+    button {
+ --color: #560bad;
+ font-family: inherit;
+ display: inline-block;
+ width: 8em;
+ height: 2.6em;
+ line-height: 2.5em;
+ margin: 20px;
+ position: relative;
+ overflow: hidden;
+ border: 2px solid var(--color);
+ transition: color .5s;
+ z-index: 1;
+ font-size: 17px;
+ border-radius: 6px;
+ font-weight: 500;
+ color: var(--color);
+}
+
+button:before {
+ content: "";
+ position: absolute;
+ z-index: -1;
+ background: var(--color);
+ height: 150px;
+ width: 200px;
+ border-radius: 50%;
+}
+
+button:hover {
+ color: #fff;
+}
+
+button:before {
+ top: 100%;
+ left: 100%;
+ transition: all .7s;
+}
+
+button:hover:before {
+ top: -30px;
+ left: -30px;
+}
+
+button:active:before {
+ background: #3a0ca3;
+ transition: background 0s;
+}
+</style>
+<body>
+
+ <h1>
+    Numeri da 1 a 100 con primalità
+ </h1>
+
+ <input id="mioInput" type="text">
+<p>
+ <button onclick="calcola()" >Numero</button>
+ <button onclick="stampare()" >cento</button>
+ <button onclick="stampa()" >diecimila</button>
+ <button onclick="stam()" >contare</button>
+ <button onclick="a()" >duecento</button>
+ <button onclick="m()" >trecento</button>
+ <button onclick="t()" >quattrocento</button>
+ <button onclick="s()" >cinquecento</button>
+ <button onclick="z()" >seicento</button>
+ <button onclick="x()" >settecento</button>
+ <button onclick="y()" >ottocento</button>
+ <button onclick="p()" >novecento</button></p>
+ <script>
+
+ function calcola(){
+ 
+ for(let n=0;n<=999;n++)
+ {
+ document.write("il numero ");
+ if(isPrime(n))
+ {
+ document.write(n+"*"+"<br>")
+ }
+ else
+ {
+ document.write(n+"<br>");
+ }
+ 
+ }
+ 
+ }
+ function isPrime(n){
+ 
+ let OutPrimo=true;
+ 
+ for(let fattore=2;fattore<=n/2;fattore++)
+ {
+ if(n%fattore==0)
+ {
+ OutPrimo=false;
+ }
+ }
+ 
+ return OutPrimo;
+ }
+
+
+ 
+
+ function stampare(){
+ 
+ 
+ let conta=0 
+ for(let n=0;n<=100;n++)
+ {
+ if(isPrim(n))
+ {
+ conta++
+ }
+ 
+ }
+ document.write("i numeri primi tra 1 e 100 sono"+conta);
+ 
+ }
+ function stam(){
+ 
+ 
+ let conta1=0 
+ for(let n=100;n<=200;n++)
+ {
+ if(isPrim(n))
+ {
+ conta1++
+ }
+ 
+ }
+ document.write("i numeri primi tra 100 e 200 sono"+conta1);
+ 
+ }
+
+ function a(){
+ 
+ 
+ let conta2=0 
+ for(let n=200;n<=300;n++)
+ {
+ if(isPrim(n))
+ {
+ conta2++
+ }
+ 
+ }
+ document.write("i numeri primi tra 200 e 300 sono"+conta2);
+ 
+ }
+
+ function m(){
+ 
+ 
+ let conta3=0 
+ for(let n=200;n<=300;n++)
+ {
+ if(isPrim(n))
+ {
+ conta3++
+ }
+ 
+ }
+ document.write("i numeri primi tra 300 e 400 sono"+conta3);
+ 
+ }
+ function t(){
+ 
+ 
+ let conta4=0 
+ for(let n=400;n<=500;n++)
+ {
+ if(isPrim(n))
+ {
+ conta4++
+ }
+ 
+ }
+ document.write("i numeri primi tra 400 e 500 sono"+conta4);
+ 
+ }
+ function s(){
+ 
+ 
+ let conta5=0 
+ for(let n=500;n<=600;n++)
+ {
+ if(isPrim(n))
+ {
+ conta5++
+ }
+ 
+ }
+ document.write("i numeri primi tra 500 e 600 sono"+conta5);
+ 
+ }
+ function z(){
+ 
+ 
+ let conta6=0 
+ for(let n=600;n<=700;n++)
+ {
+ if(isPrim(n))
+ {
+ conta6++
+ }
+ 
+ }
+ document.write("i numeri primi tra 600 e 700 sono"+conta6);
+ 
+ }
+ function x(){
+ 
+ 
+ let conta7=0 
+ for(let n=700;n<=800;n++)
+ {
+ if(isPrim(n))
+ {
+ conta7++
+ }
+ 
+ }
+ document.write("i numeri primi tra 700 e 800 sono"+conta7);
+ 
+ }
+ function y(){
+ 
+ 
+ let conta8=0 
+ for(let n=800;n<=900;n++)
+ {
+ if(isPrim(n))
+ {
+ conta8++
+ }
+ 
+ }
+ document.write("i numeri primi tra 800 e 900 sono"+conta8);
+ 
+ }
+ function p(){
+ 
+ 
+ let conta9=0 
+ for(let n=900;n<=1000;n++)
+ {
+ if(isPrim(n))
+ {
+ conta9++
+ }
+ 
+ }
+ document.write("i numeri primi tra 900 e 1000 sono"+conta9);
+ 
+ }
+ function isPrim(n){
+ 
+ let OutPrimo=true;
+ 
+ for(let fattore=2;fattore<=n/2;fattore++)
+ {
+ if(n%fattore==0)
+ {
+ OutPrimo=false;
+ }
+ }
+ 
+ return OutPrimo;
+ }
+
+
+
+ function stampa(){
+ 
+ 
+ let conta1=0 
+ for(let n=0;n<=10000;n++)
+ {
+ if(isPri(n))
+ {
+ conta1++
+ }
+ 
+ }
+ document.write("i numeri primi tra 1 e 10000 sono"+conta1);
+ 
+ }
+ function isPri(n){
+ 
+ let OutPrimo=true;
+ 
+ for(let fattore=2;fattore<=n/2;fattore++)
+ {
+ if(n%fattore==0)
+ {
+ OutPrimo=false;
+ }
+ }
+ 
+ return OutPrimo;
+ }
+ 
+ </script>
+</body>
+</html>
