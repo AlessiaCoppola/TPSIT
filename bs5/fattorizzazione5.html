@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="it-IT">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css&quot; rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+   
+  </head>
+  <body>
+    <div class="container-fluid">
+        <h1>Fattorizzatore di base</h1>
+        <input id="mioinput" type="text">
+        <input id="mioinput2" type="text">
+        <br>
+       <p><button class="button" type="button"onclick="EseguiCodice();">Cerca i fattori</button></p>
+
+       <p> <button class="button2" type="button"onclick="stampo();">Cerca + fattori</button></p>
+ 
+      </div>
+
+    <script>
+   
+function EseguiCodice() {
+    let estremoSuperiore=0;
+    let estremoInferiore=0;
+    estremoSuperiore=document.getElementById("mioinput").value;
+    estremoInferiore=document.getElementById("mioinput2").value;
+    document.write("Fattorizza i numeri fino a : "+estremoSuperiore);
+    document.write("Fattorizza i numeri con + fattori : "+estremoInferiore);
+    document.write("<br>");
+    for(let i=estremoInferiore;i<=estremoSuperiore;i++)
+       {
+        document.write("<span>"+ i+" </span> <br>");  
+        document.write("<span> Fattori: "+fattorizzatore(i)+" </span> <br>");  
+       }
+    document.write("<br>");
+}
+        function fattorizzatore(n)
+        {
+          let fattore=1;
+          let fattoriOUT="";
+          let contafattori=1;
+           for(fattore=1;fattore<=n/2;fattore++)
+           {
+               if(n%fattore==0)
+               {
+                 fattoriOUT=fattoriOUT+fattore+ " ";
+                 contafattori++;
+               }
+           }
+          return fattoriOUT+ " #"+contafattori;
+   
+   
+        }
+        function stampo()
+{
+    let num=0;
+    for(let i=0;i<=100;i++)
+    {
+        SNump=nprimi(i);
+        if(SNump!=1)
+        {
+            document.write(i+"<br/>");
+        }
+    }
+}
+
+       function nprimi(num)
+{
+let NNumP=0;
+let SNump=0;
+for (let i=num; i>0; i--)
+{
+     if (num%i==0)
+     {
+        if(i==1 || i==num) {}
+        else
+       {
+        NNumP++;
+       }
+     }
+}
+     if(NNumP==0)
+    {
+        SNump=1;
+    }
+return SNump;
+}
+
+   
+       </script>
+<style>
+      *{ 
+           font-family: cursive;
+           background-color:rgb(0, 0, 0);
+           color: rgb(0, 8, 255);
+       }
+       h1 {
+  color: rgb(255, 0, 255);
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px rgb(3, 3, 255);
+}
+ /* From uiverse.io by @menezes11 */
+/* From uiverse.io by @ShadowShahriar */
+button {
+ --border-radius: 15px;
+ --border-width: 4px;
+ appearance: none;
+ position: relative;
+ padding: 1em 2em;
+ border: 0;
+ background-color: #000000;
+ font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+ font-size: 18px;
+ font-weight: 500;
+ color: #fff;
+ z-index: 2;
+}
+
+button::after {
+ --m-i: linear-gradient(#000, #000);
+ --m-o: content-box, padding-box;
+ content: "";
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ padding: var(--border-width);
+ border-radius: var(--border-radius);
+ background-image: conic-gradient(
+		#488cfb,
+		#29dbbc,
+		#ddf505,
+		#ff9f0e,
+		#e440bb,
+		#655adc,
+		#488cfb
+	);
+ -webkit-mask-image: var(--m-i), var(--m-i);
+ mask-image: var(--m-i), var(--m-i);
+ -webkit-mask-origin: var(--m-o);
+ mask-origin: var(--m-o);
+ -webkit-mask-clip: var(--m-o);
+ mask-composite: exclude;
+ -webkit-mask-composite: destination-out;
+ filter: hue-rotate(0);
+ animation: rotate-hue linear 500ms infinite;
+ animation-play-state: paused;
+}
+
+button:hover::after {
+ animation-play-state: running;
+}
+
+@keyframes rotate-hue {
+ to {
+  filter: hue-rotate(1turn);
+ }
+}
+
+button,
+button::after {
+ box-sizing: border-box;
+}
+
+button:active {
+ --border-width: 5px;
+}
+        
+    
+</style>
+  </body>
+</html>
