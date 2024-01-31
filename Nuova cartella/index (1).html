@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <style>
+
+    body {
+        background-color: white;
+        font-family: Arial, sans-serif;
+        font-size: 30px;
+        background: rgb(238, 174, 202);
+        background: linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Imposta l'altezza del body al 100% della viewport */
+    }
+
+    .container {
+        max-width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .gradient-title {
+        font-family: 'Arial', sans-serif;
+        font-size: 3em;
+        background: linear-gradient(90deg, black, violet);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        color: blue;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        border-color: fuchsia;
+        font-size: 20px;
+    }
+
+    .btn-primary {
+        background-color: gray;
+        border-color: fuchsia;
+        box-shadow: none;
+        font-weight: 600;
+    }
+
+    .button-56 {
+        align-items: center;
+        background-color: #fee6e3;
+        border: 2px solid #111;
+        border-radius: 8px;
+        box-sizing: border-box;
+        color: #111;
+        cursor: pointer;
+        display: flex;
+        font-family: Inter, sans-serif;
+        font-size: 16px;
+        height: 48px;
+        justify-content: center;
+        line-height: 24px;
+        max-width: 100%;
+        padding: 0 25px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-56:after {
+        background-color: #111;
+        border-radius: 8px;
+        content: "";
+        display: block;
+        height: 48px;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        top: -2px;
+        transform: translate(8px, 8px);
+        transition: transform .2s ease-out;
+        z-index: -1;
+    }
+
+    .button-56:hover:after {
+        transform: translate(0, 0);
+    }
+
+    .button-56:active {
+        background-color: #ffdeda;
+        outline: 0;
+    }
+
+    .button-56:hover {
+        outline: 0;
+    }
+
+    @media (min-width: 768px) {
+        .button-56 {
+            padding: 0 40px;
+        }
+    }
+
+    .button4:hover {
+        background-color: #e7e7e7;
+    }
+
+
+      </style>
+  </style>
+<body>
+    <div class="container">
+        <div id="loginFormContainer">
+            <h2>Accedi</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button class="button-56" role="button">Accedi</button>
+               
+            </form>
+            <p>Non hai un account? <a href="#" onclick="showSignupForm()">Iscriviti qui</a></p>
+        </div>
+        <div id="signupFormContainer" style="display: none;">
+            <h2>Iscriviti</h2>
+            <form id="signupForm">
+                <label for="newUsername">Nuovo Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+                <label for="newPassword">Nuova Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                <button type="submit">Iscriviti</button>
+            </form>
+            <p>Hai già un account? <a href="#" onclick="showLoginForm()">Accedi qui</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
